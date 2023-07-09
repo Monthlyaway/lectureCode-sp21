@@ -1,4 +1,4 @@
-package lec8_inheritance1;
+//package lec8_inheritance1;
 
 public class IsADemo {
     public static void main(String[] args) {

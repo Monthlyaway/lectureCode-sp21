@@ -1,52 +1,60 @@
-package lec6_lists3;
+//package lec6_lists3;
 
-/** An SLList is a list of integers, which hides the terrible truth
-   * of the nakedness within. */
-public class SLList<LochNess> {	
-	private class StuffNode {
-		public LochNess item;
-		public StuffNode next;
+/**
+ * An SLList is a list of integers, which hides the terrible truth
+ * of the nakedness within.
+ */
+public class SLList<elemType> {
+    private StuffNode first;
+    private int size;
 
-		public StuffNode(LochNess i, StuffNode n) {
-			item = i;
-			next = n;
-		}
-	} 
+    public SLList(elemType x) {
+        first = new StuffNode(x, null);
+        size = 1;
+    }
 
-	private StuffNode first;
-	private int size;
+    /**
+     * Adds x to the front of the list.
+     */
+    public void addFirst(elemType x) {
+        first = new StuffNode(x, first);
+        size += 1;
+    }
 
-	public SLList(LochNess x) {
-		first = new StuffNode(x, null);
-		size = 1;
-	}
+    /**
+     * Returns the first item in the list.
+     */
+    public elemType getFirst() {
+        return first.item;
+    }
 
- 	/** Adds x to the front of the list. */
- 	public void addFirst(LochNess x) {
- 		first = new StuffNode(x, first);
- 		size += 1;
- 	}
+    /**
+     * Adds an item to the end of the list.
+     */
+    public void addLast(elemType x) {
+        size += 1;
 
- 	/** Returns the first item in the list. */
- 	public LochNess getFirst() {
- 		return first.item; 		
- 	}
+        StuffNode p = first;
 
- 	/** Adds an item to the end of the list. */
- 	public void addLast(LochNess x) {
- 		size += 1;
+        /* Move p until it reaches the end of the list. */
+        while (p.next != null) {
+            p = p.next;
+        }
 
- 		StuffNode p = first;
+        p.next = new StuffNode(x, null);
+    }
 
- 		/* Move p until it reaches the end of the list. */
- 		while (p.next != null) {
- 			p = p.next;
- 		}
+    public int size() {
+        return size;
+    }
 
- 		p.next = new StuffNode(x, null);
- 	}
+    private class StuffNode {
+        public elemType item;
+        public StuffNode next;
 
- 	public int size() {
- 		return size;
- 	}
+        public StuffNode(elemType i, StuffNode n) {
+            item = i;
+            next = n;
+        }
+    }
 }

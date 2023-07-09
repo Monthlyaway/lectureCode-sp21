@@ -2,12 +2,12 @@ package lec7_lists4.speedtest;
 
 /** An SLList is a list of integers, which hides the terrible truth
    * of the nakedness within. */
-public class SLList<Blah> {	
+public class SLList<itemType> {
 	private class StuffNode {
-		public Blah item;
+		public itemType item;
 		public StuffNode next;
 
-		public StuffNode(Blah i, StuffNode n) {
+		public StuffNode(itemType i, StuffNode n) {
 			item = i;
 			next = n;
 		}
@@ -23,25 +23,25 @@ public class SLList<Blah> {
 		size = 0;
 	}
 
-	public SLList(Blah x) {
+	public SLList(itemType x) {
 		sentinel = new StuffNode(null, null);
 		sentinel.next = new StuffNode(x, null);
 		size = 1;
 	}
 
  	/** Adds x to the front of the list. */
- 	public void addFirst(Blah x) {
+ 	public void addFirst(itemType x) {
  		sentinel.next = new StuffNode(x, sentinel.next);
  		size = size + 1;
  	}
 
  	/** Returns the first item in the list. */
- 	public Blah getFirst() {
+ 	public itemType getFirst() {
  		return sentinel.next.item;
  	}
 
  	/** Adds x to the end of the list. */
- 	public void addLast(Blah x) {
+ 	public void addLast(itemType x) {
  		size = size + 1; 		
 
  		StuffNode p = sentinel;

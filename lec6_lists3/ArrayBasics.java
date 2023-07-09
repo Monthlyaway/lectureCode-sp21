@@ -1,11 +1,15 @@
-package lec6_lists3;
+//package lec6_lists3;
 
-/** ArrayBasics
- *  @author Josh Hug
+/**
+ * ArrayBasics
+ *
+ * @author Josh Hug
  */
 
 public class ArrayBasics {
-    /** ArrayBasics */
+    /**
+     * ArrayBasics
+     */
     public static void main(String[] args) {
         int[] z = null;
         int[] x, y;
@@ -20,7 +24,7 @@ public class ArrayBasics {
         s[4] = "ketchup";
         s[x[3] - x[1]] = "muffins";
 
-        int[] b = {9, 10, 11}; 
+        int[] b = {9, 10, 11};
         System.arraycopy(b, 0, x, 3, 2);
     }
 }
