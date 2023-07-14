@@ -9,6 +9,11 @@ public class Dog implements Comparable<Dog> {
         size = s;
     }
 
+    /**
+     * return negative number if rhs is smaller than this
+     * @param uddaDog the object to be compared.
+     * @return
+     */
     @Override
     public int compareTo(Dog uddaDog) {
         //assume nobody is messing up and giving us

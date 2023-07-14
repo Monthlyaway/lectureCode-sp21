@@ -6,7 +6,7 @@ package lec9_inheritance2;
  */
 public class HoFDemo {
     public static int do_twice(IntUnaryFunction f, int x) {
-        return f.apply(f.apply(x));
+        return f.apply(f.apply(x));  // f(x) is not allowed, f is a class, not a function
     }
 
     public static void main(String[] args) {
